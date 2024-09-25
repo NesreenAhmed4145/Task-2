@@ -1,0 +1,97 @@
+/* Basic styles for the slider */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+}
+
+.slider {
+    position: relative;
+    width: 80%;
+    max-width: 1500px;
+    overflow: hidden;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease;
+    opacity: 0;
+    display: none;
+}
+
+.slide.active {
+    opacity: 1;
+    display: block;
+}
+
+.slide img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 2;
+font-size: 50px;
+background-color: transparent;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+color: black;}
+
+/* Pagination Indicators */
+.pagination {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #717171;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .prev, .next {
+        padding: 5px;
+    }
+}
